@@ -53,6 +53,78 @@
   }, { threshold: 0.12 });
   $$('.reveal').forEach((el) => io.observe(el));
 
+
+  /* Photo slider */
+  const slider = $('#slider');
+  const slides = $$('.slide', slider);
+  const dotsBox = $('#slider-dots');
+  const playBtn = $('#slider-play');
+  const INTERVAL = 6000;
+  let current = 0;
+  let timer = null;
+  let userPaused = reduceMotion;
+  let hovering = false;
+  slider.style.setProperty('--dur', `${INTERVAL}ms`);
+  const dots = slides.map((_, i) => {
+    const b = document.createElement('button');
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-label', `Photo ${i + 1}`);
+    b.addEventListener('click', () => { go(i); restart(); });
+    dotsBox.append(b);
+    return b;
+  });
+  const go = (n) => {
+    current = (n + slides.length) % slides.length;
+    slides.forEach((s, i) => {
+      const on = i === current;
+      s.classList.toggle('is-active', on);
+      s.setAttribute('aria-hidden', !on);
+      if (!on) { const img = $('img', s); img.style.animation = 'none'; void img.offsetWidth; img.style.animation = ''; }
+    });
+    dots.forEach((d, i) => {
+      d.classList.remove('is-active', 'is-done');
+      d.setAttribute('aria-selected', i === current);
+      if (i < current) d.classList.add('is-done');
+    });
+    void dotsBox.offsetWidth;
+    dots[current].classList.add('is-active');
+    $$('img', slider).forEach((im) => { im.loading = 'eager'; });
+  };
+  const stop = () => { clearTimeout(timer); timer = null; };
+  const schedule = () => { stop(); if (!userPaused && !hovering && !document.hidden) timer = setTimeout(() => { go(current + 1); schedule(); }, INTERVAL); };
+  const restart = () => { go(current); schedule(); };
+  const setPaused = (p) => {
+    userPaused = p;
+    playBtn.textContent = p ? '▶' : '❚❚';
+    playBtn.setAttribute('aria-pressed', p);
+    playBtn.setAttribute('aria-label', p ? 'Reprendre le défilement' : 'Mettre en pause le défilement');
+    slider.classList.toggle('is-static', p);
+    if (p) stop(); else restart();
+  };
+  $('#slider-prev').addEventListener('click', () => { go(current - 1); schedule(); });
+  $('#slider-next').addEventListener('click', () => { go(current + 1); schedule(); });
+  playBtn.addEventListener('click', () => setPaused(!userPaused));
+  slider.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') { go(current - 1); schedule(); }
+    if (e.key === 'ArrowRight') { go(current + 1); schedule(); }
+  });
+  slider.addEventListener('mouseenter', () => { hovering = true; slider.classList.add('is-paused'); stop(); });
+  slider.addEventListener('mouseleave', () => { hovering = false; slider.classList.remove('is-paused'); restart(); });
+  document.addEventListener('visibilitychange', () => (document.hidden ? stop() : schedule()));
+  let startX = null;
+  slider.addEventListener('pointerdown', (e) => { if (!e.target.closest('button')) startX = e.clientX; });
+  addEventListener('pointerup', (e) => {
+    if (startX === null) return;
+    const dx = e.clientX - startX;
+    startX = null;
+    if (Math.abs(dx) > 40) { go(current + (dx < 0 ? 1 : -1)); schedule(); }
+  });
+  playBtn.textContent = userPaused ? '▶' : '❚❚';
+  playBtn.setAttribute('aria-pressed', userPaused);
+  slider.classList.toggle('is-static', userPaused);
+  go(0);
+  schedule();
+
   /* Tabs */
   const tabs = $$('[role="tab"]');
   const bar = $('.tabs__bar');
