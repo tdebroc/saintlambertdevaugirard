@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paroisse Saint-Lambert de Vaugirard – Église catholique du 15e arrondissement de Paris</title>
+  <meta name="description" content="Paroisse catholique Saint-Lambert de Vaugirard, Paris 15<span style="text-transform:none">e</span> : horaires des messes, adoration, confessions, accueil, jeunes, solidarité et vie paroissiale.">
+  <meta name="theme-color" content="#E26F27">
+  <link rel="icon" href="assets/img/logo-icone.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#accueil" class="brand" aria-label="Saint-Lambert de Vaugirard – accueil">
+        <img src="assets/img/logo-orange.png" alt="Saint Lambert de Vaugirard" width="1225" height="439">
+      </a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="#horaires">Horaires</a>
+        <a href="#edito">Édito</a>
+        <a href="#sacrements">Sacrements</a>
+        <a href="#vivre">La vie paroissiale</a>
+        <a href="#actualites">Actualités</a>
+        <a href="#contact">Contact</a>
+        <a href="#donner" class="btn btn--small nav__cta">Faire un don</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <!-- HERO -->
+    <section class="hero" id="accueil">
+      <div class="hero__blob hero__blob--1" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow reveal">Paroisse catholique · Paris 15<span style="text-transform:none">e</span></p>
+          <h1 class="reveal" style="--d:.08s">Bienvenue à <span class="accent">Saint-Lambert</span></h1>
+          <p class="lead reveal" style="--d:.16s">Prier en tout temps, se ressourcer auprès du Seigneur et grandir dans la foi, à tout âge. Une communauté vivante, au cœur de Vaugirard.</p>
+          <div class="hero__cta reveal" style="--d:.24s">
+            <a href="#horaires" class="btn">Tous les horaires</a>
+            <a href="#vivre" class="btn btn--ghost">Découvrir la paroisse</a>
+          </div>
+          <div class="next reveal" style="--d:.32s" id="next-mass" aria-live="polite">
+            <span class="next__pulse" aria-hidden="true"></span>
+            <div>
+              <small>Prochaine messe</small>
+              <strong id="next-mass-text">…</strong>
+            </div>
+          </div>
+        </div>
+        <div class="hero__visual reveal" style="--d:.2s">
+          <div class="arch">
+            <img src="assets/img/eglise-clocher.jpg" alt="Le clocher de l'église Saint-Lambert de Vaugirard" width="1046" height="1400" fetchpriority="high" data-parallax>
+          </div>
+          <div class="badge badge--1"><img src="assets/img/logo-icone.png" alt="" width="512" height="512"></div>
+          <div class="badge badge--2"><small>Église ouverte</small><strong>tous les jours<br>8h – 19h30</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANDEAU -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Prier en tout temps</span><i>✛</i><span>Se ressourcer auprès du Seigneur</span><i>✛</i><span>Grandir dans la foi à tout âge</span><i>✛</i>
+        <span>Prier en tout temps</span><i>✛</i><span>Se ressourcer auprès du Seigneur</span><i>✛</i><span>Grandir dans la foi à tout âge</span><i>✛</i>
+        <span>Prier en tout temps</span><i>✛</i><span>Se ressourcer auprès du Seigneur</span><i>✛</i><span>Grandir dans la foi à tout âge</span><i>✛</i>
+      </div>
+    </div>
+
+    <!-- HORAIRES -->
+    <section class="section" id="horaires">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Horaires</p>
+          <h2>Rejoignez-nous pour prier</h2>
+          <p>Messes, adoration, confessions et accueil : retrouvez tout ce qu'il faut savoir pour venir à Saint-Lambert.</p>
+        </header>
+
+        <div class="tabs reveal" role="tablist" aria-label="Type d'horaires">
+          <button role="tab" id="tab-messes" aria-controls="panel-messes" aria-selected="true">Messes</button>
+          <button role="tab" id="tab-adoration" aria-controls="panel-adoration" aria-selected="false" tabindex="-1">Adoration &amp; confessions</button>
+          <button role="tab" id="tab-accueil" aria-controls="panel-accueil" aria-selected="false" tabindex="-1">Accueil</button>
+          <span class="tabs__bar" aria-hidden="true"></span>
+        </div>
+
+        <div class="panels">
+          <div class="panel is-active" role="tabpanel" id="panel-messes" aria-labelledby="tab-messes">
+            <article class="card card--feature">
+              <h3>Messes dominicales</h3>
+              <ul class="times">
+                <li data-day="6"><span>Samedi</span><b>18h</b></li>
+                <li data-day="0"><span>Dimanche</span><b>9h00</b><b>10h45</b><b>18h30</b></li>
+              </ul>
+              <p class="muted">À l'église Saint-Lambert.</p>
+            </article>
+            <article class="card">
+              <h3>Messes en semaine</h3>
+              <ul class="times">
+                <li data-day="1"><span>Lundi</span><b>19h</b></li>
+                <li data-day="2,3,4,5"><span>Mardi à vendredi</span><b>8h30</b><b>19h</b></li>
+                <li data-day="6"><span>Samedi</span><b>8h30</b></li>
+              </ul>
+              <p class="muted">Adoration le jeudi à 19h30.</p>
+            </article>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-adoration" aria-labelledby="tab-adoration" hidden>
+            <article class="card card--feature">
+              <h3>Adoration eucharistique</h3>
+              <ul class="times">
+                <li><span>Jeudi</span><b>19h30</b></li>
+              </ul>
+              <p class="muted">Un temps de silence et de louange devant le Saint-Sacrement.</p>
+            </article>
+            <article class="card">
+              <h3>Confessions</h3>
+              <ul class="times">
+                <li><span>Jeudi</span><b>17h30 – 18h45</b></li>
+                <li><span>Jeudi</span><b>pendant l'adoration</b></li>
+                <li><span>Samedi</span><b>17h – 17h45</b></li>
+              </ul>
+              <p class="muted">À l'église.</p>
+            </article>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-accueil" aria-labelledby="tab-accueil" hidden>
+            <article class="card card--feature">
+              <h3>Maison paroissiale</h3>
+              <p class="muted">2 rue Gerbert</p>
+              <ul class="times">
+                <li><span>Lundi à vendredi</span><b>10h – 12h30</b><b>14h30 – 17h</b></li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>À l'église</h3>
+              <p class="muted">Bureau d'accueil, à droite en entrant par la porte principale. Un prêtre vous accueille (confessions possibles).</p>
+              <ul class="times">
+                <li><span>Mardi à vendredi</span><b>17h30 – 18h45</b></li>
+                <li><span>Samedi</span><b>10h30 – 12h30</b></li>
+              </ul>
+              <p class="muted">Église ouverte tous les jours de 8h à 19h30 (19h en août).</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDITO -->
+    <section class="section section--tint" id="edito">
+      <div class="container edito">
+        <div class="edito__photo reveal">
+          <img src="assets/img/eglise-facade-cote.jpg" alt="L'église Saint-Lambert vue de la rue Gerbert" width="1000" height="1333" loading="lazy">
+        </div>
+        <div class="edito__body reveal" style="--d:.1s">
+          <p class="eyebrow">Éditorial</p>
+          <h2>«&nbsp;Rendez à César ce qui est à César, et à Dieu ce qui est à&nbsp;Dieu&nbsp;»</h2>
+          <p class="verse">Mt 22, 15-21</p>
+          <blockquote>
+            <p><strong>Question : qui a inventé la laïcité ? Réponse : c'est Jésus !</strong></p>
+            <p>La réponse de Jésus au piège tendu par les pharisiens dans l'Évangile d'aujourd'hui a eu une répercussion énorme dans la suite de l'Histoire.</p>
+            <div class="more" id="edito-more">
+              <p>Quel est ce piège ? Payer l'impôt à l'empereur revient à reconnaître l'occupant romain comme légitime, alors que le Messie était censé en libérer. Ne pas le payer expose à être considéré comme un rebelle et à finir sur une croix.</p>
+              <p>Mais voilà que la réponse nous introduit à une vérité profonde. Si l'on mêle le pouvoir à la foi, alors cette foi devient vite esclave du pouvoir. Le pouvoir cherche bien souvent à passer pour Dieu, à recevoir un culte, ou bien à instrumentaliser Dieu à son profit. Pendant très longtemps, et encore maintenant parfois, cette vérité n'a pas été comprise. Heureusement, le Christ nous libère, y compris par cette parole. Oui, la laïcité ainsi expliquée par Jésus nous rend libre de tout pouvoir, en particulier de ce que chaque pouvoir a, à plus ou moins forte dose, d'illégitime ou d'immoral.</p>
+              <p>« Rendez à César ce qui est à César, et à Dieu ce qui est à Dieu. » L'effigie et l'inscription sur la pièce de l'impôt sont de César, mais où donc sont l'effigie et l'inscription de Dieu ? Ne sont-elles pas en Jésus Christ, Verbe fait chair, Verbe fait visage ? Mais aussi, nous-mêmes ne sommes-nous pas appelés, comme croyants, à être l'effigie et l'inscription de Dieu dans nos lieux de vie ? Nous portons en effet en nous l'Image et la Ressemblance de Dieu.</p>
+            </div>
+          </blockquote>
+          <button class="link-btn" id="edito-toggle" aria-expanded="false" aria-controls="edito-more">Lire la suite <span aria-hidden="true">→</span></button>
+          <p class="signature">Oleg Ouss, diacre</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SACREMENTS -->
+    <section class="section" id="sacrements">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Les grandes étapes</p>
+          <h2>Accompagnés à chaque moment de la vie</h2>
+        </header>
+        <div class="grid grid--4">
+          <a class="tile reveal" href="https://st-lambert.fr/faire-baptiser-votre-enfant/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c3.3 4.4 6 7.4 6 11a6 6 0 0 1-12 0c0-3.600 2.700-6.600 6-11z"/></svg>
+            <h3>Baptême</h3><p>Faire baptiser votre enfant, ou devenir chrétien à l'âge adulte.</p><span class="tile__go">En savoir plus →</span>
+          </a>
+          <a class="tile reveal" style="--d:.08s" href="https://st-lambert.fr/se-confesser/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.500-4.600-7.500-10.200A4.300 4.300 0 0 1 12 8.200a4.300 4.300 0 0 1 7.500 2.600C19.500 16.400 12 21 12 21z"/></svg>
+            <h3>Confession</h3><p>Recevoir le pardon et repartir en paix, à l'église.</p><span class="tile__go">En savoir plus →</span>
+          </a>
+          <a class="tile reveal" style="--d:.16s" href="https://st-lambert.fr/se-marier-a-leglise/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="13" r="5.500"/><circle cx="15" cy="13" r="5.500"/></svg>
+            <h3>Mariage</h3><p>Se marier à l'église et préparer son engagement.</p><span class="tile__go">En savoir plus →</span>
+          </a>
+          <a class="tile reveal" style="--d:.24s" href="https://st-lambert.fr/les-funerailles-chretiennes/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M6 9h12"/></svg>
+            <h3>Obsèques</h3><p>Être accompagnés dans l'épreuve du deuil par la communauté.</p><span class="tile__go">En savoir plus →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIE PAROISSIALE -->
+    <section class="section section--tint" id="vivre">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">La vie paroissiale</p>
+          <h2>Il y a une place pour chacun</h2>
+          <p>Prier, apprendre, partager, servir : explorez les propositions de la paroisse.</p>
+        </header>
+        <div class="grid grid--3">
+          <article class="topic reveal">
+            <span class="topic__num">01</span>
+            <h3>Découvrir</h3>
+            <ul>
+              <li><a href="https://st-lambert.fr/art-et-culture/lhistoire-de-leglise/" target="_blank" rel="noopener">L'histoire de l'église</a></li>
+              <li><a href="https://st-lambert.fr/festivart/" target="_blank" rel="noopener">Festiv'Art</a></li>
+              <li><a href="https://st-lambert.fr/art-et-culture/autour-de-lorgue/" target="_blank" rel="noopener">Autour de l'orgue</a></li>
+              <li><a href="https://st-lambert.fr/equipes-paroissiales/" target="_blank" rel="noopener">Équipes paroissiales</a></li>
+            </ul>
+          </article>
+          <article class="topic reveal" style="--d:.08s">
+            <span class="topic__num">02</span>
+            <h3>Prier</h3>
+            <ul>
+              <li><a href="https://st-lambert.fr/les-messes/" target="_blank" rel="noopener">Les messes</a></li>
+              <li><a href="https://st-lambert.fr/adoration-et-laudes/" target="_blank" rel="noopener">Adoration et laudes</a></li>
+              <li><a href="https://st-lambert.fr/se-confesser/" target="_blank" rel="noopener">Se confesser</a></li>
+              <li><a href="https://st-lambert.fr/prier-en-communion/" target="_blank" rel="noopener">Prier en communion</a></li>
+            </ul>
+          </article>
+          <article class="topic reveal" style="--d:.16s">
+            <span class="topic__num">03</span>
+            <h3>Vivre sa foi</h3>
+            <ul>
+              <li><a href="https://st-lambert.fr/groupes/parcours-alpha/" target="_blank" rel="noopener">Parcours Alpha</a></li>
+              <li><a href="https://st-lambert.fr/prendre-le-chemin-de-la-foi-comme-adulte/" target="_blank" rel="noopener">Chemin de la foi pour adultes</a></li>
+              <li><a href="https://st-lambert.fr/autour-de-la-parole-de-dieu/" target="_blank" rel="noopener">Autour de la Parole de Dieu</a></li>
+              <li><a href="https://st-lambert.fr/pelerinages/" target="_blank" rel="noopener">Pèlerinages</a></li>
+            </ul>
+          </article>
+          <article class="topic reveal">
+            <span class="topic__num">04</span>
+            <h3>Jeunes</h3>
+            <ul>
+              <li><a href="https://st-lambert.fr/grandir-dans-la-foi/" target="_blank" rel="noopener">Grandir dans la foi</a></li>
+              <li><a href="https://st-lambert.fr/patronage/" target="_blank" rel="noopener">Patronage</a></li>
+              <li><a href="https://st-lambert.fr/messe-des-jeunes/" target="_blank" rel="noopener">Messe des jeunes</a></li>
+              <li><a href="https://st-lambert.fr/jeune-pro/" target="_blank" rel="noopener">Jeunes pros</a></li>
+            </ul>
+          </article>
+          <article class="topic reveal" style="--d:.08s">
+            <span class="topic__num">05</span>
+            <h3>Servir</h3>
+            <ul>
+              <li><a href="https://st-lambert.fr/foi-et-lumiere/" target="_blank" rel="noopener">Foi et Lumière</a></li>
+              <li><a href="https://st-lambert.fr/invite-du-lundi/" target="_blank" rel="noopener">Invités du lundi</a></li>
+              <li><a href="https://st-lambert.fr/entraide-scolaire/" target="_blank" rel="noopener">Entraide scolaire</a></li>
+              <li><a href="https://st-lambert.fr/devenir-benevole/" target="_blank" rel="noopener">Devenir bénévole</a></li>
+            </ul>
+          </article>
+          <article class="topic topic--cta reveal" style="--d:.16s" id="donner">
+            <span class="topic__num">06</span>
+            <h3>Donner</h3>
+            <p>La paroisse vit grâce à la générosité de tous.</p>
+            <ul>
+              <li><a href="https://st-lambert.fr/denier-de-leglise/" target="_blank" rel="noopener">Denier de l'Église</a></li>
+              <li><a href="https://st-lambert.fr/legs/" target="_blank" rel="noopener">Legs</a></li>
+            </ul>
+            <a href="https://st-lambert.fr/denier-de-leglise/" target="_blank" rel="noopener" class="btn btn--white">Faire un don</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACTUALITES -->
+    <section class="section" id="actualites">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Actualités</p>
+          <h2>À ne pas manquer</h2>
+        </header>
+        <div class="grid grid--news">
+          <a class="news news--poster reveal" href="https://st-lambert.fr/wp-content/uploads/2026/09/EVEN-2026-2027.png" target="_blank" rel="noopener">
+            <img src="assets/img/affiche-even.jpg" alt="Affiche du programme EVEN 2026-2027" width="794" height="1152" loading="lazy">
+            <div class="news__body"><span class="tag">Jeunes 18-30 ans</span><h3>Programme EVEN 2026-2027</h3></div>
+          </a>
+          <a class="news news--poster reveal" style="--d:.08s" href="https://st-lambert.fr/wp-content/uploads/2026/09/PDM-Verso.png" target="_blank" rel="noopener">
+            <img src="assets/img/affiche-pdm.jpg" alt="Brochure PDM" width="838" height="1257" loading="lazy">
+            <div class="news__body"><span class="tag">Brochure</span><h3>Brochure PDM</h3></div>
+          </a>
+          <div class="news-list">
+            <a class="news-item reveal" style="--d:.1s" href="https://dioceseparis.fr/-visite-du-pape-leon-xiv-a-paris-.html" target="_blank" rel="noopener">
+              <span class="tag">Diocèse</span><h3>Visite du pape Léon XIV à Paris</h3><span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="news-item reveal" style="--d:.16s" href="https://dioceseparis.fr/IMG/pdf/lettre_pastorale_avent_2025_sans_droits.pdf" target="_blank" rel="noopener">
+              <span class="tag">Lettre pastorale</span><h3>Lettre pastorale de l'Avent 2025</h3><span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="news-item reveal" style="--d:.22s" href="https://st-lambert.fr/pages/actualites/annonces-et-evenements/" target="_blank" rel="noopener">
+              <span class="tag">Paroisse</span><h3>Annonces et événements</h3><span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="news-item reveal" style="--d:.28s" href="https://st-lambert.fr/wp-content/uploads/2024/08/Bulletin-inscription-CERFROID-v2.pdf" target="_blank" rel="noopener">
+              <span class="tag">Inscription</span><h3>Bulletin d'inscription Cerfroid</h3><span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="downloads reveal">
+          <div>
+            <h3>Feuille d'informations paroissiales</h3>
+            <p class="muted">Toute la vie de la paroisse, chaque semaine.</p>
+          </div>
+          <div class="downloads__btns">
+            <a class="btn" href="https://st-lambert.fr/wp-content/uploads/2026/10/I-18-10-26.pdf" target="_blank" rel="noopener">⬇ Feuille du 18/10</a>
+            <a class="btn btn--ghost" href="https://st-lambert.fr/wp-content/uploads/2026/10/Chants-18-10-26.pdf" target="_blank" rel="noopener">♪ Chants du 18/10</a>
+            <a class="btn btn--ghost" href="https://st-lambert.fr/wp-content/uploads/2026/10/Chants-25-10-26.pdf" target="_blank" rel="noopener">♪ Chants du 25/10</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section--tint" id="contact">
+      <div class="container contact">
+        <div class="contact__info reveal">
+          <p class="eyebrow">Nous trouver</p>
+          <h2>Adresse et coordonnées</h2>
+          <ul class="contact__list">
+            <li>
+              <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.100 7-11.500A7 7 0 0 0 5 9.500C5 14.900 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg></span>
+              <div><b>Église Saint-Lambert de Vaugirard</b><br>2 rue Gerbert, 75015 Paris</div>
+            </li>
+            <li>
+              <span class="ico"><img src="assets/img/metro-12.png" alt="" width="225" height="225"></span>
+              <div><b>Métro ligne 12</b>, arrêt Vaugirard<br><span class="muted">Bus 39, 62, 70, 80, 88, 89</span></div>
+            </li>
+            <li>
+              <span class="ico"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
+              <div><a href="tel:+33144194525">01 44 19 45 25</a></div>
+            </li>
+            <li>
+              <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+              <div><a href="mailto:secretariat@st-lambert.fr">secretariat@st-lambert.fr</a></div>
+            </li>
+          </ul>
+          <div class="contact__links">
+            <a class="btn" href="https://www.openstreetmap.org/?mlat=48.83987&mlon=2.29744#map=17/48.83987/2.29744" target="_blank" rel="noopener">Itinéraire</a>
+            <a class="btn btn--ghost" href="https://st-lambert.fr/pages/contact/" target="_blank" rel="noopener">Page contact</a>
+          </div>
+        </div>
+        <div class="contact__map reveal" style="--d:.12s">
+          <iframe title="Plan : église Saint-Lambert de Vaugirard" loading="lazy" referrerpolicy="no-referrer"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=2.2924%2C48.8374%2C2.3024%2C48.8424&amp;layer=mapnik&amp;marker=48.83987%2C2.29744"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <img src="assets/img/logo-blanc.png" alt="Saint Lambert de Vaugirard" width="1239" height="438">
+      <p>© 2026 Paroisse Saint-Lambert de Vaugirard<br><small>Maquette de refonte du site <a href="https://st-lambert.fr" target="_blank" rel="noopener">st-lambert.fr</a> · Contenus issus du site officiel</small></p>
+      <div class="footer__social">
+        <a href="https://www.facebook.com/people/Paroisse-Saint-Lambert-de-Vaugirard/100064756864448/" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 8V6.500c0-.7.300-1 1-1h2V2h-3a4 4 0 0 0-4 4v2H7v3.500h3V22h4v-10.500h3L17.500 8z"/></svg></a>
+        <a href="https://www.youtube.com/user/DioceseParis" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21.600 7.200a2.500 2.500 0 0 0-1.800-1.800C18.200 5 12 5 12 5s-6.200 0-7.800.4A2.500 2.500 0 0 0 2.400 7.200C2 8.800 2 12 2 12s0 3.200.4 4.800a2.500 2.500 0 0 0 1.800 1.800C5.800 19 12 19 12 19s6.200 0 7.800-.4a2.500 2.500 0 0 0 1.800-1.800c.4-1.600.4-4.800.4-4.800s0-3.200-.4-4.800zM10 15V9l5.200 3z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="totop" id="totop" aria-label="Retour en haut">↑</button>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
